@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(_velocity, ForceMode.Force);
         }
 
-
         if (controls.Player.Booster2.IsInProgress() && controls.Player.Booster3.IsInProgress())
         {
 
