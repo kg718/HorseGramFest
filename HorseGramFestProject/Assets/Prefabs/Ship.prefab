@@ -5004,6 +5004,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  invulnarabilityWindow: 2
+  colourFlash: {r: 0.5, g: 0.5, b: 0.5, a: 0.39215687}
+  flashFrequency: 0.5
+  shipMesh: {fileID: 8073957581641793788}
 --- !u!54 &4142992455422304500
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19680,5 +19684,10 @@ PrefabInstance:
 --- !u!4 &6937612123946826643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f0f284b0f82901348aa6e8123f40ebc7, type: 3}
+  m_PrefabInstance: {fileID: 7479880869351939192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8073957581641793788 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f0f284b0f82901348aa6e8123f40ebc7, type: 3}
   m_PrefabInstance: {fileID: 7479880869351939192}
   m_PrefabAsset: {fileID: 0}
