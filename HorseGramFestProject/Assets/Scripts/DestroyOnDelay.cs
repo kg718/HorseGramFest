@@ -8,9 +8,4 @@ public class DestroyOnDelay : MonoBehaviour
     {
         Destroy(gameObject, delay);
     }
-
-    void Update()
-    {
-        
-    }
 }
