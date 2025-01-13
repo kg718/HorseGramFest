@@ -4910,7 +4910,7 @@ GameObject:
   - component: {fileID: 3774862799860130384}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4985,8 +4985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1f061a47ebae45bb2d8227e80b25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrusterPower: 0.2
-  velocityCap: 4
+  thrusterPower: 0.4
+  velocityCap: 5
   thruster1: {fileID: 6652471573163299832}
   thruster2: {fileID: 4010204333920046255}
   thruster3: {fileID: 4918842175731772293}
