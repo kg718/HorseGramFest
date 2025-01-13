@@ -226,6 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionDelay: 2
-  particleEffect: {fileID: 1871633775132409585, guid: 830784c081866c2488a7f2eeca33702c, type: 3}
+  particleEffect: {fileID: 1030438145670762557, guid: f9718a6c98d164b4e8925d652877cd55, type: 3}
   colourFlash: {r: 0.6226415, g: 0.032306872, b: 0.032306872, a: 1}
   flashFrequency: 0.5

@@ -17,8 +17,7 @@ public class Laser : MonoBehaviour
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        line.SetPosition(0, generator1.position);
-        line.SetPosition(1, generator2.position);
+        SetLinePositions();
     }
 
     void Update()
@@ -27,6 +26,7 @@ public class Laser : MonoBehaviour
         {
             DetectShip();
             line.enabled = true;
+            SetLinePositions();
         }
         else
         {
@@ -59,5 +59,11 @@ public class Laser : MonoBehaviour
         {
             _hit.collider.gameObject.GetComponent<PlayerDamage>().TakeDamage(25);
         }
+    }
+
+    private void SetLinePositions()
+    {
+        line.SetPosition(0, generator1.position);
+        line.SetPosition(1, generator2.position);
     }
 }

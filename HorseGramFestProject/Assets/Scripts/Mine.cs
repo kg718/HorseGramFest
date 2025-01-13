@@ -67,7 +67,7 @@ public class Mine : MonoBehaviour
 
     private void Explode()
     {
-        Instantiate(particleEffect, transform.position, transform.rotation);
+        Instantiate(particleEffect, transform.position, Quaternion.identity);
         if (isPlayerInRadius)
         {
             shipDamage.TakeDamage(25);
