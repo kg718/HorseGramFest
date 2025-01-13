@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class DestroyOnDelay : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float delay;
+
     void Start()
     {
-        
+        Destroy(gameObject, delay);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

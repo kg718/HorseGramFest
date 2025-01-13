@@ -4986,7 +4986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterPower: 0.4
-  velocityCap: 5
+  velocityCap: 6
   thruster1: {fileID: 6652471573163299832}
   thruster2: {fileID: 4010204333920046255}
   thruster3: {fileID: 4918842175731772293}
