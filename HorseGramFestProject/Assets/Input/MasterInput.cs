@@ -62,6 +62,15 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8bbd057-a4ea-47ed-b282-de1a22d6bae1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,28 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
                     ""action"": ""Booster4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""358a01fc-1449-4d12-8fb0-aeb2e5b5f9da"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4a7600b-38c2-473f-8cd4-c55c49db4590"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +195,7 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
         m_Player_Booster2 = m_Player.FindAction("Booster2", throwIfNotFound: true);
         m_Player_Booster3 = m_Player.FindAction("Booster3", throwIfNotFound: true);
         m_Player_Booster4 = m_Player.FindAction("Booster4", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +261,7 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Booster2;
     private readonly InputAction m_Player_Booster3;
     private readonly InputAction m_Player_Booster4;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @MasterInput m_Wrapper;
@@ -237,6 +270,7 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
         public InputAction @Booster2 => m_Wrapper.m_Player_Booster2;
         public InputAction @Booster3 => m_Wrapper.m_Player_Booster3;
         public InputAction @Booster4 => m_Wrapper.m_Player_Booster4;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +292,9 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
             @Booster4.started += instance.OnBooster4;
             @Booster4.performed += instance.OnBooster4;
             @Booster4.canceled += instance.OnBooster4;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -274,6 +311,9 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
             @Booster4.started -= instance.OnBooster4;
             @Booster4.performed -= instance.OnBooster4;
             @Booster4.canceled -= instance.OnBooster4;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -297,5 +337,6 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
         void OnBooster2(InputAction.CallbackContext context);
         void OnBooster3(InputAction.CallbackContext context);
         void OnBooster4(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
