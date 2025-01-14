@@ -4991,6 +4991,8 @@ MonoBehaviour:
   thruster2: {fileID: 4010204333920046255}
   thruster3: {fileID: 4918842175731772293}
   thruster4: {fileID: 6364211917113945631}
+  maxFuel: 700
+  fuelConsumptionRate: 5
 --- !u!114 &7277269864031078991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5072,6 +5074,7 @@ MonoBehaviour:
   thrusterFX2: {fileID: 3369177738466133488}
   thrusterFX3: {fileID: 8898751409032221842}
   thrusterFX4: {fileID: 8592448196357824632}
+  playerMovement: {fileID: 592948181340060764}
 --- !u!1 &5573284847605469355
 GameObject:
   m_ObjectHideFlags: 0
