@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BoosterAnimation : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class BoosterAnimation : MonoBehaviour
     [SerializeField] private ParticleSystem thrusterFX2;
     [SerializeField] private ParticleSystem thrusterFX3;
     [SerializeField] private ParticleSystem thrusterFX4;
+
+    [SerializeField] private PlayerMovement playerMovement;
 
     private void Awake()
     {
@@ -35,40 +38,36 @@ public class BoosterAnimation : MonoBehaviour
 
     void Update()
     {
-        if(controls.Player.Booster1.WasPressedThisFrame())
+        // Check if fuel is empty
+        if (playerMovement.CurrentFuel <= 0)
         {
-            thrusterFX1.Play();
+            // Stop all thrusters, animation now a no go 
+            StopAllThrusters();
+            return;
         }
-        else if(controls.Player.Booster1.WasReleasedThisFrame())
-        {
-            thrusterFX1.Stop();
-        }
+        HandleThruster(controls.Player.Booster1, thrusterFX1);
+        HandleThruster(controls.Player.Booster2, thrusterFX2);
+        HandleThruster(controls.Player.Booster3, thrusterFX3);
+        HandleThruster(controls.Player.Booster4, thrusterFX4);
+    }
 
-        if (controls.Player.Booster2.WasPressedThisFrame())
+    private void HandleThruster(InputAction button, ParticleSystem thrusterFX)
+    {
+        if (button.WasPressedThisFrame())
         {
-            thrusterFX2.Play();
+            thrusterFX.Play();
         }
-        else if (controls.Player.Booster2.WasReleasedThisFrame())
+        else if (button.WasReleasedThisFrame())
         {
-            thrusterFX2.Stop();
+            thrusterFX.Stop();
         }
+    }
 
-        if (controls.Player.Booster3.WasPressedThisFrame())
-        {
-            thrusterFX3.Play();
-        }
-        else if (controls.Player.Booster3.WasReleasedThisFrame())
-        {
-            thrusterFX3.Stop();
-        }
-
-        if (controls.Player.Booster4.WasPressedThisFrame())
-        {
-            thrusterFX4.Play();
-        }
-        else if (controls.Player.Booster4.WasReleasedThisFrame())
-        {
-            thrusterFX4.Stop();
-        }
+    private void StopAllThrusters()
+    {
+        thrusterFX1.Stop();
+        thrusterFX2.Stop();
+        thrusterFX3.Stop();
+        thrusterFX4.Stop();
     }
 }
