@@ -17,7 +17,7 @@ public class Laser : MonoBehaviour
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        SetLinePositions();
+        SetLinePositions(generator2.transform.position);
     }
 
     void Update()
@@ -26,7 +26,6 @@ public class Laser : MonoBehaviour
         {
             DetectShip();
             line.enabled = true;
-            SetLinePositions();
         }
         else
         {
@@ -54,16 +53,23 @@ public class Laser : MonoBehaviour
         Vector3 _dir = generator2.transform.position - generator1.transform.position;
         float _dist = Vector3.Distance(generator1.transform.position, generator2.transform.position);
         Physics.Raycast(generator1.position, _dir, out _hit, _dist);
-        Debug.DrawRay(generator1.position, _dir, Color.green);
-        if (_hit.collider.gameObject.tag == "Player")
+        if(_hit.collider.gameObject.tag == "Damage")
+        {
+            SetLinePositions(_hit.point);
+        }
+        else if (_hit.collider.gameObject.tag == "Player")
         {
             _hit.collider.gameObject.GetComponent<PlayerDamage>().TakeDamage(25);
         }
+        else
+        {
+            SetLinePositions(generator2.transform.position);
+        }
     }
 
-    private void SetLinePositions()
+    private void SetLinePositions(Vector3 _secondPos)
     {
         line.SetPosition(0, generator1.position);
-        line.SetPosition(1, generator2.position);
+        line.SetPosition(1, _secondPos);
     }
 }
