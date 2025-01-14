@@ -925,6 +925,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3774862799860130384, guid: 2c7d208764dab0e459f030c3bef6c2cb, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 2042341414}
     - target: {fileID: 5406302913919609684, guid: 2c7d208764dab0e459f030c3bef6c2cb, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -979,6 +983,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6759723840344391990, guid: 2c7d208764dab0e459f030c3bef6c2cb, type: 3}
   m_PrefabInstance: {fileID: 1686007387}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2042341414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 592948181340060764, guid: 2c7d208764dab0e459f030c3bef6c2cb, type: 3}
+  m_PrefabInstance: {fileID: 1686007387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f1f061a47ebae45bb2d8227e80b25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
