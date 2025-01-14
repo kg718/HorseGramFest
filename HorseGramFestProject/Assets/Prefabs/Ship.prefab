@@ -5007,9 +5007,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   invulnarabilityWindow: 2.5
+  deathExplosion: {fileID: 2066600797806296297, guid: 787b5898d7dfce847985855899998441, type: 3}
   colourFlash: {r: 0.5, g: 0.5, b: 0.5, a: 0}
   flashFrequency: 0.3
   shipMesh: {fileID: 2433074917742046280}
+  glassMesh: {fileID: 1414173196997705840}
 --- !u!54 &4142992455422304500
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19688,6 +19690,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6af488215b37dfd4fb4f7e9b24c2a7ed, type: 3}
+--- !u!23 &1414173196997705840 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8029106800918022278, guid: 6af488215b37dfd4fb4f7e9b24c2a7ed, type: 3}
+  m_PrefabInstance: {fileID: 8992906839952263414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &2433074917742046280 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6703957281922639038, guid: 6af488215b37dfd4fb4f7e9b24c2a7ed, type: 3}

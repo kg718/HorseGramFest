@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        int _randYRotation = Random.Range(0, 360); 
+        transform.rotation = Quaternion.Euler(0, _randYRotation, 0);
     }
 
     private void OnDisable()

@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 2297965211840811687}
   m_Layer: 0
   m_Name: Laser Generator2
-  m_TagString: Untagged
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 1587190677021715841}
   m_Layer: 0
   m_Name: Laser Generator1
-  m_TagString: Untagged
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
