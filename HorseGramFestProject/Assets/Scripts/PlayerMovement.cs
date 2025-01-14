@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fuelConsumptionRate = 5f;
 
     private float currentFuel;
-    public float CurrentFuel => currentFuel;
+     public float CurrentFuel => currentFuel;
     private Rigidbody rb;
 
     private void Awake()
@@ -61,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (controls.Player.Booster1.IsInProgress() && controls.Player.Booster4.IsInProgress())
         {
-
+            activeEngines++;
+            activeEngines++;
         }
         else if (controls.Player.Booster1.IsInProgress())
         {
@@ -78,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (controls.Player.Booster2.IsInProgress() && controls.Player.Booster3.IsInProgress())
         {
-
+            activeEngines++;
+            activeEngines++;
         }
         else if (controls.Player.Booster2.IsInProgress())
         {
