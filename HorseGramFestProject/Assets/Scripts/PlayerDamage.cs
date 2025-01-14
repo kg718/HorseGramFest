@@ -8,6 +8,9 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] private float invulnarabilityWindow;
     private float currentInvulnarabilityTimer = 0f;
     private bool isInvulnarable = false;
+    [SerializeField] private GameObject deathExplosion;
+    private Animator transitionAnimator;
+    private GameObject gameOverPanel;
 
     [Space]
     //[SerializeField, Range(0, 255)] private int flashAlpha;
@@ -17,11 +20,15 @@ public class PlayerDamage : MonoBehaviour
     private float currentFlashTimer = 0f;
     private bool isFlashing = false;
     [SerializeField] private MeshRenderer shipMesh;
+    [SerializeField] private MeshRenderer glassMesh;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         defaultColour = shipMesh.material.color;
+        transitionAnimator = GameObject.Find("Canvas").transform.GetChild(0).gameObject.GetComponent<Animator>();
+        gameOverPanel = GameObject.Find("Canvas").transform.GetChild(1).gameObject;
+        gameOverPanel.SetActive(false);
     }
 
     void Update()
@@ -54,6 +61,10 @@ public class PlayerDamage : MonoBehaviour
                 shipMesh.material.color = defaultColour;
             }
         }
+        if(!shipMesh.enabled)
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -78,7 +89,11 @@ public class PlayerDamage : MonoBehaviour
             ActivateFlash();
             if (health <= 0)
             {
-
+                Instantiate(deathExplosion, transform.position, Quaternion.identity);
+                rb.velocity = Vector3.zero;
+                shipMesh.enabled = false;
+                glassMesh.enabled = false;
+                Invoke("Transition", 0.8f);
             }
         }
     }
@@ -87,5 +102,16 @@ public class PlayerDamage : MonoBehaviour
     {
         isFlashing = true;
         shipMesh.material.color = colourFlash;
+    }
+
+    private void Transition()
+    {
+        transitionAnimator.Play("TransitionPanel_In");
+        Invoke("GameOver", 1.5f);
+    }
+
+    private void GameOver()
+    {
+        gameOverPanel.SetActive(true);
     }
 }
