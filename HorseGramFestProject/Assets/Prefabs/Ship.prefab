@@ -4925,7 +4925,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
+  m_LocalScale: {x: 2.9999998, y: 2.9999998, z: 2.9999998}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8883209951144865565}
@@ -4985,7 +4985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f1f061a47ebae45bb2d8227e80b25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrusterPower: 0.4
+  thrusterPower: 0.8
   velocityCap: 6
   thruster1: {fileID: 6652471573163299832}
   thruster2: {fileID: 4010204333920046255}
