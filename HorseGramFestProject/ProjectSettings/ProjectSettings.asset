@@ -39,8 +39,14 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: cd0392a1971186a4593ba70886a9e16b, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 5ba23c4e71d9ff74c8bea979bb295376, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 5204dde79573eea4bb14e92a802bead9, type: 3}
+    duration: 2
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: cd0392a1971186a4593ba70886a9e16b, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -776,7 +782,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: HorseGramFestProject
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -784,7 +790,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: HorseGramFestProject
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: HorseGramFestProject
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
