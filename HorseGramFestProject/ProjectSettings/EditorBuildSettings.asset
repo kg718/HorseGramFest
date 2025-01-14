@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu_Lotus.unity
+    guid: a520f091000a88b4d92c3efe51f14418
+  - enabled: 1
+    path: Assets/Scenes/Level_Kieran.unity
+    guid: a070ddbc6f4b17d47bdaf657c9d5d620
   m_configObjects: {}
