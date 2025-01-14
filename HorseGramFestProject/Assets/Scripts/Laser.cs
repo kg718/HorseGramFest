@@ -60,6 +60,7 @@ public class Laser : MonoBehaviour
         else if (_hit.collider.gameObject.tag == "Player")
         {
             _hit.collider.gameObject.GetComponent<PlayerDamage>().TakeDamage(25);
+            SetLinePositions(_hit.point);
         }
         else
         {

@@ -45,35 +45,37 @@ public class PlayerMovement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
         }
 
-        if (controls.Player.Booster1.IsInProgress() && controls.Player.Booster4.IsInProgress())
+        if (controls.Player.Booster1.IsInProgress() && controls.Player.Booster3.IsInProgress())
         {
 
         }
         else if (controls.Player.Booster1.IsInProgress())
         {
-            _velocity += new Vector3(thruster1.forward.x * thrusterPower, 0, thruster1.forward.z * thrusterPower);
-            rb.AddForce(_velocity, ForceMode.Force);
+            _velocity += new Vector3(thruster1.forward.x, 0, thruster1.forward.z);
+            //rb.AddForce(_velocity, ForceMode.Force);
         }
-        else if (controls.Player.Booster4.IsInProgress())
+        else if (controls.Player.Booster3.IsInProgress())
         {
-            _velocity += new Vector3(thruster4.forward.x * thrusterPower, 0, thruster4.forward.z * thrusterPower);
-            rb.AddForce(_velocity, ForceMode.Force);
+            _velocity += new Vector3(thruster3.forward.x, 0, thruster3.forward.z);
+            //rb.AddForce(_velocity, ForceMode.Force);
         }
 
-        if (controls.Player.Booster2.IsInProgress() && controls.Player.Booster3.IsInProgress())
+        if (controls.Player.Booster2.IsInProgress() && controls.Player.Booster4.IsInProgress())
         {
 
         }
         else if (controls.Player.Booster2.IsInProgress())
         {
-            _velocity += new Vector3(thruster2.forward.x * thrusterPower, 0, thruster2.forward.z * thrusterPower);
-            rb.AddForce(_velocity, ForceMode.Force);
+            _velocity += new Vector3(thruster2.forward.x, 0, thruster2.forward.z);
+            //rb.AddForce(_velocity, ForceMode.Force);
         }
-        else if (controls.Player.Booster3.IsInProgress())
+        else if (controls.Player.Booster4.IsInProgress())
         {
-            _velocity += new Vector3(thruster3.forward.x * thrusterPower, 0, thruster3.forward.z * thrusterPower);
-            rb.AddForce(_velocity, ForceMode.Force);
+            _velocity += new Vector3(thruster4.forward.x, 0, thruster4.forward.z);
+            //rb.AddForce(_velocity, ForceMode.Force);
         }
+        _velocity = _velocity.normalized * thrusterPower;
+        rb.AddForce(_velocity, ForceMode.Force);
 
         if (rb.velocity.x > velocityCap)
         {

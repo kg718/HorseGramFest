@@ -4986,7 +4986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterPower: 1.2
-  velocityCap: 6
+  velocityCap: 8
   thruster1: {fileID: 6652471573163299832}
   thruster2: {fileID: 4010204333920046255}
   thruster3: {fileID: 4918842175731772293}
@@ -5004,9 +5004,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  invulnarabilityWindow: 2
+  invulnarabilityWindow: 2.5
   colourFlash: {r: 0.5, g: 0.5, b: 0.5, a: 0}
-  flashFrequency: 0.5
+  flashFrequency: 0.3
   shipMesh: {fileID: 2433074917742046280}
 --- !u!54 &4142992455422304500
 Rigidbody:
@@ -5054,7 +5054,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.48011073
+  m_Radius: 0.694978
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3774862799860130384
 MonoBehaviour:

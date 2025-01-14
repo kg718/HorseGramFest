@@ -258,5 +258,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 359930833077649856, guid: 4a151fa3721bcbe4d9b1d0b7e54c133e, type: 3}
   spawnPoint: {fileID: 8112449304234585060}
-  shotSpeed: 5
-  shotDelay: 2
+  shotSpeed: 7
+  shotDelay: 4
