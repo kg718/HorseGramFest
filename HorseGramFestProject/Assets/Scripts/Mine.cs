@@ -13,13 +13,13 @@ public class Mine : MonoBehaviour
     private Color defaultColour;
     private float currentFlashTimer = 0f;
     private bool isFlashing = false;
-    private MeshRenderer mesh;
+    [SerializeField] private MeshRenderer mesh;
 
     [SerializeField] private AudioSource beepSFX;
 
     void Start()
     {
-        mesh = GetComponent<MeshRenderer>();
+        //mesh = GetComponent<MeshRenderer>();
         defaultColour = mesh.material.color;
     }
 
