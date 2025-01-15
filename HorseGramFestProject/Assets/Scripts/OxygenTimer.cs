@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenTimer : MonoBehaviour
 {
+<<<<<<< Updated upstream
     [SerializeField] private float maxOxygen = 100f;
     [SerializeField] private float oxygenDepletionRate = 5f;
 
@@ -59,5 +61,36 @@ public class OxygenTimer : MonoBehaviour
     {
         currentOxygen = Mathf.Clamp(currentOxygen + oxygenAmount, 0, maxOxygen);
         Debug.Log($"Oxygen added: {oxygenAmount}. Current Oxygen: {currentOxygen}");
+=======
+    [SerializeField] private float maxOxygen;
+    [SerializeField] private float oxygenConsumptionRate;
+    [SerializeField] private Slider oxygenSlider;
+    private float currentOxygen;
+    private Rigidbody rb;
+
+    void Start()
+    {
+        currentOxygen = maxOxygen;
+        oxygenSlider.maxValue = maxOxygen;
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        currentOxygen -= oxygenConsumptionRate * Time.deltaTime;
+        oxygenSlider.value = currentOxygen;
+
+        if(currentOxygen <= 0)
+        {
+            rb.velocity = Vector3.zero;
+            GetComponent<PlayerMovement>().currentFuel = 0;
+            Invoke("Transition", 0.8f);
+        }
+    }
+
+    private void Transition()
+    {
+        gameObject.GetComponent<PlayerDamage>().Transition();
+>>>>>>> Stashed changes
     }
 }
