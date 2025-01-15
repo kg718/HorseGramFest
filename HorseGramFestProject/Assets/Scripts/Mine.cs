@@ -39,13 +39,13 @@ public class Mine : MonoBehaviour
             if (mesh.material.color == defaultColour)
             {
                 mesh.material.color = colourFlash;
-                sprite.color = spriteColourFlash;
+                //sprite.color = spriteColourFlash;
                 beepSFX.Play();
             }
             else
             {
                 mesh.material.color = defaultColour;
-                sprite.color = defaultSpriteColour;
+                //sprite.color = defaultSpriteColour;
             }
         }
     }

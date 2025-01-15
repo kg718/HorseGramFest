@@ -6,11 +6,20 @@ public class GameOverUI : MonoBehaviour
 {
     private EventSystem eventSytem;
     [SerializeField] private GameObject retryButton;
+    [SerializeField] private GameObject menuButton;
 
     void Start()
     {
         eventSytem = EventSystem.current;
         eventSytem.SetSelectedGameObject(retryButton);
+    }
+
+    private void Update()
+    {
+        if (Time.timeScale > 0 && !(eventSytem.currentSelectedGameObject == retryButton || eventSytem.currentSelectedGameObject == menuButton))
+        {
+            eventSytem.SetSelectedGameObject(retryButton);
+        }
     }
 
     public void OnClickRetry()

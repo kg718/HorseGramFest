@@ -357,10 +357,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionDelay: 2
   particleEffect: {fileID: 1030438145670762557, guid: f9718a6c98d164b4e8925d652877cd55, type: 3}
-  colourFlash: {r: 0.3584906, g: 0.10991457, b: 0.10991457, a: 1}
+  colourFlash: {r: 0.028301895, g: 0.006541476, b: 0.006541476, a: 1}
   spriteColourFlash: {r: 1, g: 0, b: 0, a: 0.23529412}
   flashFrequency: 0.3
-  mesh: {fileID: 7589875842638947990}
+  mesh: {fileID: 4647235269717140390}
   sprite: {fileID: 7617739678167600903}
   beepSFX: {fileID: 7812211313425536039}
 --- !u!1001 &6112742668383970296
@@ -444,13 +444,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
+--- !u!23 &4647235269717140390 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1489170624299286622, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
+  m_PrefabInstance: {fileID: 6112742668383970296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6007355967310332947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
-  m_PrefabInstance: {fileID: 6112742668383970296}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &7589875842638947990 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4431670454091400558, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
   m_PrefabInstance: {fileID: 6112742668383970296}
   m_PrefabAsset: {fileID: 0}

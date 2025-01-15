@@ -55,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (currentFuel <= 0)
         {
-            Debug.Log("Fuel Empty");
             return;
         }
 
@@ -124,13 +123,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, -velocityCap);
         }
-
-        Debug.Log("Fuel: " + currentFuel);
     }
 
     public void AddFuel(float fuelAmount)
     {
         currentFuel = Mathf.Clamp(currentFuel + fuelAmount, 0, maxFuel);
-        Debug.Log("Fuel added: " + fuelAmount + ". Current Fuel: " + currentFuel);
     }
 }
