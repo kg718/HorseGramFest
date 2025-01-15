@@ -31,7 +31,7 @@ public class Turret : MonoBehaviour
             playerInRange = false;
         }
         currentShotTimer += Time.deltaTime;
-        if(currentShotTimer > shotDelay - 0.8f && !chargeSFX.isPlaying && playerInRange)
+        if(currentShotTimer > shotDelay - 1f && !chargeSFX.isPlaying && playerInRange)
         {
             chargeSFX.Play();
         }

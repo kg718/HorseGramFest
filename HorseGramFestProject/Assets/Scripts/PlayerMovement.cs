@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
      public float CurrentFuel => currentFuel;
     private Rigidbody rb;
 
+    [SerializeField] private AudioSource thrusterSFX;
+
     private void Awake()
     {
         controls = new MasterInput();
@@ -122,6 +124,21 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.z < -velocityCap)
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, -velocityCap);
+        }
+
+        if(activeEngines >= 1)
+        {
+            if (!thrusterSFX.isPlaying)
+            {
+                thrusterSFX.Play();
+            }
+        }
+        else if (activeEngines == 0)
+        {
+            if (thrusterSFX.isPlaying)
+            {
+                thrusterSFX.Stop();
+            }
         }
     }
 
