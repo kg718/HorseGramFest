@@ -22,6 +22,12 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] private MeshRenderer shipMesh;
     [SerializeField] private MeshRenderer glassMesh;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource collisionSFX;
+    [SerializeField] private AudioSource deathSFX;
+    [SerializeField] private AudioSource warningSFX;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -76,6 +82,11 @@ public class PlayerDamage : MonoBehaviour
                 Vector3 _velocity = new Vector3(_contact.normal.x * 10, 0, _contact.normal.z * 10);
                 rb.AddForce(_velocity, ForceMode.Impulse);
             }
+            if(shipMesh.enabled && !collisionSFX.isPlaying)
+            {
+                collisionSFX.pitch = Random.Range(0.9f, 1.1f);
+                collisionSFX.Play();
+            }
             TakeDamage(25);
         }
     }
@@ -87,9 +98,14 @@ public class PlayerDamage : MonoBehaviour
             health -= _damage;
             isInvulnarable = true;
             ActivateFlash();
+            if(health == 25)
+            {
+                warningSFX.Play();
+            }
             if (health <= 0)
             {
                 Instantiate(deathExplosion, transform.position, Quaternion.identity);
+                deathSFX.Play();
                 rb.velocity = Vector3.zero;
                 shipMesh.enabled = false;
                 glassMesh.enabled = false;

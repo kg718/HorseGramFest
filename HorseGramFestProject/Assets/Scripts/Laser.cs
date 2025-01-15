@@ -13,6 +13,8 @@ public class Laser : MonoBehaviour
     private float currentActivationTimer = 0f;
 
     private LineRenderer line;
+
+    [SerializeField] private AudioSource zapSFX;
     
     void Start()
     {
@@ -61,6 +63,10 @@ public class Laser : MonoBehaviour
         {
             _hit.collider.gameObject.GetComponent<PlayerDamage>().TakeDamage(25);
             SetLinePositions(_hit.point);
+            if(!zapSFX.isPlaying)
+            {
+                zapSFX.Play();
+            }
         }
         else
         {

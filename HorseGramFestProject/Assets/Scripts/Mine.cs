@@ -15,6 +15,8 @@ public class Mine : MonoBehaviour
     private bool isFlashing = false;
     private MeshRenderer mesh;
 
+    [SerializeField] private AudioSource beepSFX;
+
     void Start()
     {
         mesh = GetComponent<MeshRenderer>();
@@ -33,6 +35,7 @@ public class Mine : MonoBehaviour
             if (mesh.material.color == defaultColour)
             {
                 mesh.material.color = colourFlash;
+                beepSFX.Play();
             }
             else
             {
