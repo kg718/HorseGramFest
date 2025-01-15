@@ -84,7 +84,7 @@ public class PlayerDamage : MonoBehaviour
         {
             foreach (ContactPoint _contact in collision.contacts)
             {
-                Vector3 _velocity = new Vector3(_contact.normal.x * 10, 0, _contact.normal.z * 10);
+                Vector3 _velocity = new Vector3(_contact.normal.x * 6, 0, _contact.normal.z * 6);
                 rb.AddForce(_velocity, ForceMode.Impulse);
                 Instantiate(damageParticleFX, _contact.point, Quaternion.Euler(-_contact.normal));
             }
