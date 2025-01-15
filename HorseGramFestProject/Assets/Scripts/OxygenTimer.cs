@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,8 @@ public class OxygenTimer : MonoBehaviour
     [SerializeField] private float maxOxygen;
     [SerializeField] private float oxygenConsumptionRate;
     [SerializeField] private Slider oxygenSlider;
-    private float currentOxygen;
+    [HideInInspector] public float currentOxygen;
+    [SerializeField] private TextMeshProUGUI gameOverText;
     private Rigidbody rb;
 
     void Start()
@@ -27,10 +29,15 @@ public class OxygenTimer : MonoBehaviour
             GetComponent<PlayerMovement>().currentFuel = 0;
             Invoke("Transition", 0.8f);
         }
+        if (currentOxygen > maxOxygen)
+        {
+            currentOxygen = maxOxygen;
+        }
     }
 
     private void Transition()
     {
         gameObject.GetComponent<PlayerDamage>().Transition();
+        gameOverText.text = "You ran out of Oxygen";
     }
 }

@@ -4,13 +4,12 @@ public class OxygenPickUp : MonoBehaviour
 {
     [SerializeField] private int oxygenIncrease;
 
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        if(other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<OxygenTimer>().currentOxygen += oxygenIncrease;
+            Destroy(gameObject);
+        }
     }
 }

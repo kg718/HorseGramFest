@@ -23,7 +23,8 @@ public class LevelEnd : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             playerObject = other.gameObject;
-            InvokeRepeating("MoveShip", 0, 0.01f);
+            playerObject.GetComponent<PlayerMovement>().hasWon = true;
+            InvokeRepeating("MoveShip", 0.1f, 0.01f);
             Invoke("Transition", 0.8f);
         }
     }

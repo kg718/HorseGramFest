@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,8 +23,11 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public float currentFuel;
      public float CurrentFuel => currentFuel;
     private Rigidbody rb;
+    [SerializeField] private TextMeshProUGUI gameOverText;
 
     [SerializeField] private AudioSource thrusterSFX;
+    [SerializeField] private AudioSource pickUpSFX;
+    [HideInInspector] public bool hasWon;
 
     private void Awake()
     {
@@ -55,8 +59,10 @@ public class PlayerMovement : MonoBehaviour
         fuelSlider.value = CurrentFuel;
         Vector3 _velocity = Vector3.zero;
 
-        if (currentFuel <= 0)
+        if (currentFuel <= 0 && !hasWon)
         {
+            gameOverText.text = "You ran out of Fuel";
+            GetComponent<PlayerDamage>().Transition();
             return;
         }
 
@@ -139,6 +145,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 thrusterSFX.Stop();
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "PickUp")
+        {
+            float _randPitch = Random.Range(0.85f, 1.15f);
+            pickUpSFX.pitch = _randPitch;
+            pickUpSFX.Play();
         }
     }
 
