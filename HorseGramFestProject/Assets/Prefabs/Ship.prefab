@@ -5070,6 +5070,7 @@ GameObject:
   - component: {fileID: 4142992455422304500}
   - component: {fileID: 529228968835553610}
   - component: {fileID: 3774862799860130384}
+  - component: {fileID: 5934158209998210910}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Player
@@ -5156,6 +5157,7 @@ MonoBehaviour:
   thruster4: {fileID: 6364211917113945631}
   maxFuel: 700
   fuelConsumptionRate: 5
+  fuelSlider: {fileID: 0}
 --- !u!114 &7277269864031078991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5244,6 +5246,21 @@ MonoBehaviour:
   thrusterFX3: {fileID: 8898751409032221842}
   thrusterFX4: {fileID: 8592448196357824632}
   playerMovement: {fileID: 592948181340060764}
+--- !u!114 &5934158209998210910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406302913919609684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc4411264c23914a96791ef9a4aab78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOxygen: 100
+  oxygenConsumptionRate: 1
+  oxygenSlider: {fileID: 0}
 --- !u!1 &5573284847605469355
 GameObject:
   m_ObjectHideFlags: 0

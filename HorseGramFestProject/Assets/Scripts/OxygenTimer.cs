@@ -1,18 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenTimer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float maxOxygen;
+    [SerializeField] private float oxygenConsumptionRate;
+    [SerializeField] private Slider oxygenSlider;
+    private float currentOxygen;
+    private Rigidbody rb;
+
     void Start()
     {
-        
+        currentOxygen = maxOxygen;
+        oxygenSlider.maxValue = maxOxygen;
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        currentOxygen -= oxygenConsumptionRate * Time.deltaTime;
+        oxygenSlider.value = currentOxygen;
+
+        if(currentOxygen <= 0)
+        {
+            rb.velocity = Vector3.zero;
+            GetComponent<PlayerMovement>().currentFuel = 0;
+            Invoke("Transition", 0.8f);
+        }
+    }
+
+    private void Transition()
+    {
+        gameObject.GetComponent<PlayerDamage>().Transition();
     }
 }

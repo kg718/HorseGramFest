@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
@@ -27,13 +28,17 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] private AudioSource deathSFX;
     [SerializeField] private AudioSource warningSFX;
 
+    [Header("UI")]
+    [SerializeField] private List<GameObject> damagePercentages = new List<GameObject>();
+    private int currentPercent = 1;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         defaultColour = shipMesh.material.color;
-        transitionAnimator = GameObject.Find("Canvas").transform.GetChild(0).gameObject.GetComponent<Animator>();
-        gameOverPanel = GameObject.Find("Canvas").transform.GetChild(1).gameObject;
+        transitionAnimator = GameObject.Find("Canvas").transform.GetChild(2).gameObject.GetComponent<Animator>();
+        gameOverPanel = GameObject.Find("Canvas").transform.GetChild(3).gameObject;
         gameOverPanel.SetActive(false);
     }
 
@@ -99,6 +104,8 @@ public class PlayerDamage : MonoBehaviour
             health -= _damage;
             isInvulnarable = true;
             ActivateFlash();
+            damagePercentages[currentPercent].SetActive(true);
+            currentPercent++;
             if(health == 25)
             {
                 warningSFX.Play();
@@ -121,7 +128,7 @@ public class PlayerDamage : MonoBehaviour
         shipMesh.material.color = colourFlash;
     }
 
-    private void Transition()
+    public void Transition()
     {
         transitionAnimator.Play("TransitionPanel_In");
         Invoke("GameOver", 1.5f);

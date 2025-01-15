@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxFuel = 100f;
     [SerializeField] private float fuelConsumptionRate = 5f;
 
-    private float currentFuel;
+    [SerializeField] private Slider fuelSlider;
+
+    [HideInInspector] public float currentFuel;
      public float CurrentFuel => currentFuel;
     private Rigidbody rb;
 
@@ -32,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         int _randYRotation = Random.Range(0, 360); 
         transform.rotation = Quaternion.Euler(0, _randYRotation, 0);
+        fuelSlider.maxValue = maxFuel;
     }
 
     private void OnDisable()
@@ -46,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        fuelSlider.value = CurrentFuel;
         Vector3 _velocity = Vector3.zero;
 
         if (currentFuel <= 0)
