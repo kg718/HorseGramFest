@@ -13,7 +13,6 @@ public class PlayerDamage : MonoBehaviour
     private GameObject gameOverPanel;
 
     [Space]
-    //[SerializeField, Range(0, 255)] private int flashAlpha;
     [SerializeField] private Color colourFlash;
     [SerializeField] private float flashFrequency;
     private Color defaultColour;
@@ -21,6 +20,7 @@ public class PlayerDamage : MonoBehaviour
     private bool isFlashing = false;
     [SerializeField] private MeshRenderer shipMesh;
     [SerializeField] private MeshRenderer glassMesh;
+    [SerializeField] private GameObject damageParticleFX;
 
     [Header("Sound")]
     [SerializeField] private AudioSource collisionSFX;
@@ -81,6 +81,7 @@ public class PlayerDamage : MonoBehaviour
             {
                 Vector3 _velocity = new Vector3(_contact.normal.x * 10, 0, _contact.normal.z * 10);
                 rb.AddForce(_velocity, ForceMode.Impulse);
+                Instantiate(damageParticleFX, _contact.point, Quaternion.Euler(-_contact.normal));
             }
             if(shipMesh.enabled && !collisionSFX.isPlaying)
             {

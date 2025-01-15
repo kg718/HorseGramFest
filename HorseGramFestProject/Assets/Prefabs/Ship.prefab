@@ -5175,6 +5175,7 @@ MonoBehaviour:
   flashFrequency: 0.3
   shipMesh: {fileID: 2433074917742046280}
   glassMesh: {fileID: 1414173196997705840}
+  damageParticleFX: {fileID: 1189608368162733011, guid: 0f9b0cec7bfb6f447b285987fad38eab, type: 3}
   collisionSFX: {fileID: 563301747526003}
   deathSFX: {fileID: 5097573971802157163}
   warningSFX: {fileID: 8096862374071937054}
