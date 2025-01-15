@@ -37,6 +37,9 @@ public class LevelEnd : MonoBehaviour
     public void MoveShip()
     {
         playerObject.transform.GetChild(0).position += new Vector3(0, 0.3f, 0);
+        playerObject.GetComponent<PlayerMovement>().currentFuel = 0;
+        playerObject.GetComponent<BoosterAnimation>().Deactivate();
+        playerObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
     }
 
     private void EndLevel()
