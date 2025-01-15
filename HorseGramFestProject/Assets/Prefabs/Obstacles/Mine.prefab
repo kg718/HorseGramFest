@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.33490568, b: 0.33490568, a: 0.15686275}
+  m_Color: {r: 1, g: 0.33490568, b: 0.33490568, a: 0.078431375}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -244,7 +244,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 24.35, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8603448780169688780}
   - {fileID: 9218485729906186315}
@@ -358,8 +358,10 @@ MonoBehaviour:
   explosionDelay: 2
   particleEffect: {fileID: 1030438145670762557, guid: f9718a6c98d164b4e8925d652877cd55, type: 3}
   colourFlash: {r: 0.3584906, g: 0.10991457, b: 0.10991457, a: 1}
+  spriteColourFlash: {r: 1, g: 0, b: 0, a: 0.23529412}
   flashFrequency: 0.3
-  mesh: {fileID: 4647235269717140390}
+  mesh: {fileID: 7589875842638947990}
+  sprite: {fileID: 7617739678167600903}
   beepSFX: {fileID: 7812211313425536039}
 --- !u!1001 &6112742668383970296
 PrefabInstance:
@@ -371,15 +373,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -442,13 +444,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
---- !u!23 &4647235269717140390 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1489170624299286622, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
-  m_PrefabInstance: {fileID: 6112742668383970296}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6007355967310332947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
+  m_PrefabInstance: {fileID: 6112742668383970296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7589875842638947990 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4431670454091400558, guid: fad5d86b122888c4ca6158340e1597d9, type: 3}
   m_PrefabInstance: {fileID: 6112742668383970296}
   m_PrefabAsset: {fileID: 0}

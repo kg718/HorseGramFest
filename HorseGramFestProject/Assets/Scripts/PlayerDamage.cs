@@ -37,8 +37,8 @@ public class PlayerDamage : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         defaultColour = shipMesh.material.color;
-        transitionAnimator = GameObject.Find("Canvas").transform.GetChild(2).gameObject.GetComponent<Animator>();
-        gameOverPanel = GameObject.Find("Canvas").transform.GetChild(3).gameObject;
+        transitionAnimator = GameObject.Find("Canvas").transform.GetChild(6).gameObject.GetComponent<Animator>();
+        gameOverPanel = GameObject.Find("Canvas").transform.GetChild(7).gameObject;
         gameOverPanel.SetActive(false);
     }
 

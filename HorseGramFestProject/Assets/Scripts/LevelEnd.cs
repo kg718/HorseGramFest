@@ -8,8 +8,8 @@ public class LevelEnd : MonoBehaviour
 
     void Start()
     {
-        transitionAnimator = GameObject.Find("Canvas").transform.GetChild(2).gameObject.GetComponent<Animator>();
-        gameOverPanel = GameObject.Find("Canvas").transform.GetChild(4).gameObject;
+        transitionAnimator = GameObject.Find("Canvas").transform.GetChild(6).gameObject.GetComponent<Animator>();
+        gameOverPanel = GameObject.Find("Canvas").transform.GetChild(8).gameObject;
         gameOverPanel.SetActive(false);
     }
 

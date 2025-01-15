@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Pausing : MonoBehaviour
 {
     MasterInput controls;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject continueButton;
+    private EventSystem eventSystem;
 
     private void Awake()
     {
@@ -14,9 +18,10 @@ public class Pausing : MonoBehaviour
     void Start()
     {
         pausePanel.SetActive(false);
+        eventSystem = EventSystem.current;
     }
 
-    private void OnPause()
+    public void OnPause()
     {
         if (pausePanel.activeSelf)
         {
@@ -25,8 +30,15 @@ public class Pausing : MonoBehaviour
         }
         else
         {
+            eventSystem.SetSelectedGameObject(continueButton);
             pausePanel.SetActive(true);
             Time.timeScale = 0.0f;
         }
+    }
+
+    public void OnClickReturnToMenu()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadSceneAsync(0);
     }
 }

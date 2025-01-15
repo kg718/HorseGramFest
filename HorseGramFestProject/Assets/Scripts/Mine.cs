@@ -9,11 +9,14 @@ public class Mine : MonoBehaviour
 
     [Space]
     [SerializeField] private Color colourFlash;
+    [SerializeField] private Color spriteColourFlash;
     [SerializeField] private float flashFrequency;
     private Color defaultColour;
+    private Color defaultSpriteColour;
     private float currentFlashTimer = 0f;
     private bool isFlashing = false;
     [SerializeField] private MeshRenderer mesh;
+    [SerializeField] private SpriteRenderer sprite;
 
     [SerializeField] private AudioSource beepSFX;
 
@@ -21,6 +24,7 @@ public class Mine : MonoBehaviour
     {
         //mesh = GetComponent<MeshRenderer>();
         defaultColour = mesh.material.color;
+        defaultSpriteColour = sprite.color;
     }
 
     void Update()
@@ -35,11 +39,13 @@ public class Mine : MonoBehaviour
             if (mesh.material.color == defaultColour)
             {
                 mesh.material.color = colourFlash;
+                sprite.color = spriteColourFlash;
                 beepSFX.Play();
             }
             else
             {
                 mesh.material.color = defaultColour;
+                sprite.color = defaultSpriteColour;
             }
         }
     }
