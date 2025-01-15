@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Slider fuelSlider;
 
-    private float currentFuel;
+    [HideInInspector] public float currentFuel;
      public float CurrentFuel => currentFuel;
     private Rigidbody rb;
 

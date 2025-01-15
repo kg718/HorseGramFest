@@ -24,6 +24,7 @@ public class OxygenTimer : MonoBehaviour
         if(currentOxygen <= 0)
         {
             rb.velocity = Vector3.zero;
+            GetComponent<PlayerMovement>().currentFuel = 0;
             Invoke("Transition", 0.8f);
         }
     }
