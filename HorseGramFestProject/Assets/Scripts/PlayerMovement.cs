@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float currentFuel;
      public float CurrentFuel => currentFuel;
+    public float MaxFuel => maxFuel;
+
     private Rigidbody rb;
 
     private void Awake()
