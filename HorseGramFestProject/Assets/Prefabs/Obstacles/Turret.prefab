@@ -181,7 +181,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 97514f11c36c7e34a91a829e5a94ca81, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -299,9 +299,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2915772549468913822}
+  - {fileID: 3302892855476160870}
   - {fileID: 3705352824719150282}
   - {fileID: 8115970342050075817}
-  - {fileID: 3302892855476160870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6504051260766221379
@@ -438,7 +438,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 09784cd522cfe0c419a42e593d587ce2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -552,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea2da9fa0d6d2f546bb507c84b358129, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.054
+      value: -0.05399991
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea2da9fa0d6d2f546bb507c84b358129, type: 3}
       propertyPath: m_LocalRotation.w
